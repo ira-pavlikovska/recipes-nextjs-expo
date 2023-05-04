@@ -4,7 +4,7 @@ import { View } from 'app/design/view'
 
 import { MotiLink } from 'solito/moti'
 
-export function HomeScreen() {
+export function RecipesScreen() {
   return (
     <View className="flex-1 items-center justify-center p-3">
       <H1>Welcome to Solito.</H1>
@@ -43,9 +43,9 @@ export function HomeScreen() {
       </View>
       <View className="h-[32px]" />
       <Row className="space-x-8">
-        <TextLink href="/user/fernando">Regular Link</TextLink>
+        <TextLink href="/recipe/fernando">Regular Link</TextLink>
         <MotiLink
-          href="/user/fernando"
+          href="/recipe/fernando"
           animate={({ hovered, pressed }) => {
             'worklet'
 
