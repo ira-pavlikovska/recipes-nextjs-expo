@@ -5,6 +5,7 @@
   "dependencies": {
     "@react-navigation/native": "^6.0.8",
     "@react-navigation/native-stack": "^6.5.0",
+    "axios": "^1.4.0",
     "moti": "latest",
     "nativewind": "2.0.9",
     "solito": "3.0.0"

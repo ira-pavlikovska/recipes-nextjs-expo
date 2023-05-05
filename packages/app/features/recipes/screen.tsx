@@ -1,12 +1,28 @@
-import { A, H1, P, Text, TextLink } from 'app/design/typography'
+import {useEffect, useState} from "react";
+import { H1, P, Text } from 'app/design/typography'
 import { Row } from 'app/design/layout'
 import { View } from 'app/design/view'
-
+import { recipes as mobileFallbackRecipes } from '../../../../data'
 import { MotiLink } from 'solito/moti'
+import axios from "axios";
+import {RecipeType} from "../../types";
+
 
 export function RecipesScreen() {
-  return (
-    <View className="flex-1 items-center justify-center p-3">
+
+    const [recipes, setRecipes] = useState<RecipeType[]>([])
+
+    // react native accepts calls to HTTPS APIs only, so populate data from file as fallback
+    useEffect(() => {
+        axios.get('http://localhost:3000/api/recipes')
+            .then((response: any) => setRecipes(response.data))
+            .catch((error: any) => setRecipes(mobileFallbackRecipes as unknown as RecipeType[]))
+
+    }, [])
+
+    // @ts-ignore
+    return (
+    <View className="flex-1 items-center justify-center p-3 bg-gray-50">
       <H1>Welcome to Solito.</H1>
       <View className="max-w-xl">
         <P className="text-center">
@@ -14,56 +30,39 @@ export function RecipesScreen() {
           screen to another. This screen uses the same code on Next.js and React
           Native.
         </P>
-        <P className="text-center">
-          Solito is made by{' '}
-          <A
-            href="https://twitter.com/fernandotherojo"
-            hrefAttrs={{
-              target: '_blank',
-              rel: 'noreferrer',
-            }}
-          >
-            Fernando Rojo
-          </A>
-          .
-        </P>
-        <P className="text-center">
-          NativeWind is made by{' '}
-          <A
-            href="https://twitter.com/mark__lawlor"
-            hrefAttrs={{
-              target: '_blank',
-              rel: 'noreferrer',
-            }}
-          >
-            Mark Lawlor
-          </A>
-          .
-        </P>
       </View>
       <View className="h-[32px]" />
       <Row className="space-x-8">
-        <TextLink href="/recipe/fernando">Regular Link</TextLink>
-        <MotiLink
-          href="/recipe/fernando"
-          animate={({ hovered, pressed }) => {
-            'worklet'
 
-            return {
-              scale: pressed ? 0.95 : hovered ? 1.1 : 1,
-              rotateZ: pressed ? '0deg' : hovered ? '-3deg' : '0deg',
-            }
-          }}
-          transition={{
-            type: 'timing',
-            duration: 150,
-          }}
-        >
-          <Text selectable={false} className="text-base font-bold">
-            Moti Link
-          </Text>
-        </MotiLink>
       </Row>
+        {
+            recipes.map((item: RecipeType, index) => (
+            <View key={index} className="">
+                <P>Image here</P>
+
+                <MotiLink
+                    href={`/recipe/${item.recipeId}`}
+                    animate={({ hovered, pressed }) => {
+                        'worklet'
+
+                        return {
+                            scale: pressed ? 0.95 : hovered ? 1.1 : 1,
+                            rotateZ: pressed ? '0deg' : hovered ? '-3deg' : '0deg',
+                        }
+                    }}
+                    transition={{
+                        type: 'timing',
+                        duration: 150,
+                    }}
+                >
+                    <Text selectable={false} className="text-base font-bold">
+                        {item.recipeName}
+                    </Text>
+                </MotiLink>
+            </View>
+            ))
+        }
+
     </View>
   )
 }
