@@ -1,7 +1,12 @@
 import { ComponentProps, forwardRef } from 'react'
-import { Text as NativeText, Platform, Linking, TextStyle } from 'react-native'
+import { Button as NativeButton, Text as NativeText, Platform, Linking, TextStyle, TextInput as NativeInput } from 'react-native'
 import { styled, StyledProps } from 'nativewind'
 import { TextLink as SolitoTextLink } from 'solito/link'
+
+// looks like Button doesn't support styling
+export const Button = styled(NativeButton, '')
+
+export const TextInput = styled(NativeInput, 'w-full max-w-sm rounded-md p-1.5 text-gray-900 bg-gray-300 ring-1')
 
 export const Text = styled(NativeText)
 

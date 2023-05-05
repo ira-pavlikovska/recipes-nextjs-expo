@@ -1,32 +1,42 @@
-import { A, H1, P, Text, TextLink } from 'app/design/typography'
+import { useState } from 'react'
+import { A, H1, P, Text, TextLink, TextInput, Button } from 'app/design/typography'
 import { Row } from 'app/design/layout'
 import { View } from 'app/design/view'
-
-import { MotiLink } from 'solito/moti'
+import { useRouter } from 'solito/router'
 
 export function LoginScreen() {
-  return (
-    <View className="flex-1 items-center justify-center p-3">
-      <H1>Login</H1>
-        <MotiLink
-            href="/recipes"
-            animate={({ hovered, pressed }) => {
-                'worklet'
+    const { push } = useRouter()
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
 
-                return {
-                    scale: pressed ? 0.95 : hovered ? 1.1 : 1,
-                    rotateZ: pressed ? '0deg' : hovered ? '-3deg' : '0deg',
-                }
-            }}
-            transition={{
-                type: 'timing',
-                duration: 150,
-            }}
-        >
-            <Text selectable={false} className="text-base font-bold">
-                Moti Login
-            </Text>
-        </MotiLink>
+    const handleLogin = () => {
+        push('/recipes')
+    }
+
+    return (
+    <View className="flex-1 items-center justify-center px-16 bg-gray-50">
+      <H1>Login</H1>
+        <Row className="p-2">
+            <TextInput
+                value={email}
+                onChangeText={(value) => setEmail(value)}
+                placeholder="email"
+            />
+        </Row>
+        <Row className="p-2">
+            <TextInput
+                value={password}
+                onChangeText={(value) => setPassword(value)}
+                placeholder="password"
+            />
+        </Row>
+        <Row className="p-2">
+            <Button
+                onPress={handleLogin}
+                title={"Login"}
+                color={"#6b7280"}
+            />
+        </Row>
 
     </View>
   )
