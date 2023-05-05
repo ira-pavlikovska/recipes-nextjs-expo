@@ -16,14 +16,14 @@ export function LoginScreen() {
     return (
     <View className="flex-1 items-center justify-center px-16 bg-gray-50">
       <H1>Login</H1>
-        <Row className="p-2">
+        <Row className="flex-row p-2">
             <TextInput
                 value={email}
                 onChangeText={(value) => setEmail(value)}
                 placeholder="email"
             />
         </Row>
-        <Row className="p-2">
+        <Row className="flex-row p-2">
             <TextInput
                 value={password}
                 onChangeText={(value) => setPassword(value)}
