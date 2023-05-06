@@ -9,10 +9,21 @@
       "android"
     ],
     "ios": {
-      "bundleIdentifier": "com.solito.nativewind"
+      "bundleIdentifier": "com.solito.nativewind123"
     },
     "android": {
       "package": "com.solito.nativewind"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "0e6181c9-04ca-44e8-a427-e2edee728c6f"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/0e6181c9-04ca-44e8-a427-e2edee728c6f"
     }
   }
 }
