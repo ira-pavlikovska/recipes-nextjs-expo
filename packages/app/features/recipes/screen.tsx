@@ -35,7 +35,7 @@ export function RecipesScreen() {
           </View>
           <View className="scroll-auto"/>
 
-          <Row className="">
+          <Row className="grid xs:grid-cols-1 xs:gap-2 md:grid-cols-2 md:gap-2 xl:grid-cols-3 xl:gap-3">
             {
               recipes.map((item: RecipeType, index) => (
 
