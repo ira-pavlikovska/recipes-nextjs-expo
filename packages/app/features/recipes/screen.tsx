@@ -25,12 +25,10 @@ export function RecipesScreen() {
     <View className="scroll-auto flex-1 items-center justify-center p-3 bg-gray-50">
       <SafeAreaView>
         <ScrollView>
-          <H1>Delicious recipes</H1>
-          <View className="max-w-xl">
-            <P className="text-center">
-              Here is a basic starter to show you how you can navigate from one
-              screen to another. This screen uses the same code on Next.js and React
-              Native.
+          <H1 className="text-center text-gray-600">Delicious recipes</H1>
+          <View className="">
+            <P className="text-center text-gray-600">
+              Welcome to recipes library. Please, pick a meal you like and we will help you to cook it.
             </P>
           </View>
           <View className="scroll-auto"/>
@@ -39,7 +37,7 @@ export function RecipesScreen() {
             {
               recipes.map((item: RecipeType, index) => (
 
-                <View key={index} className="flex py-4 px-1">
+                <View key={index} className="flex py-4 px-1 ">
 
 
                   <MotiLink
@@ -57,12 +55,12 @@ export function RecipesScreen() {
                       duration: 150,
                     }}
                   >
-                    <Image className="w-[400px] h-[400px]"
+                    <Image className="w-[400px] h-[400px] rounded-md"
                            source={{
                              uri: item.imageUrl
                            }}
                     />
-                    <Text selectable={false} className="text-base font-bold">
+                    <Text selectable={false} className="text-base font-bold text-gray-700">
                       {item.recipeName}
                     </Text>
                   </MotiLink>
