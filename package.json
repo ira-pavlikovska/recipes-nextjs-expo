@@ -8,6 +8,7 @@
   "devDependencies": {
     "@types/react": "^18.0.17",
     "@types/react-native": "^0.69.5",
+    "cypress": "^12.11.0",
     "eslint": "^8.21.0",
     "prettier": "^2.7.1",
     "prettier-plugin-tailwindcss": "^0.1.13",
@@ -16,7 +17,9 @@
   },
   "scripts": {
     "native": "cd apps/expo && yarn start",
-    "web": "cd apps/next && yarn next"
+    "web": "cd apps/next && yarn next",
+    "cy:run": "cypress run",
+    "cy:open": "cypress open"
   },
   "engines": {
     "node": ">=16.0.0 <17.0.0"

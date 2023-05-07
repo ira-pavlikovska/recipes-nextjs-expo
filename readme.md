@@ -6,6 +6,8 @@ Recipes app allows user to pick a recipe and read ingredients and todo steps to 
 * Frontend, Web: React, Next.js, TypeScript, Tailwind CSS
 * Frontend, Mobile: React Native, Expo, TypeScript, Solito, Moti, NativeWind
 * Backend: Next.js
+* Tests: e2e test with cypress
+
 
 ## Demo
 
