@@ -12,7 +12,18 @@ Recipes app allows user to pick a recipe and read ingredients and todo steps to 
 
 ## Demo
 
-[Recipes in Vercel Cloud](https://recipes-nextjs-expo-next.vercel.app/)
+**Web**
+
+Recipes in Vercel Cloud: [https://recipes-nextjs-expo-next.vercel.app/](https://recipes-nextjs-expo-next.vercel.app/)
+
+**Mobile**
+
+Expo: [https://expo.dev/@iryna/solito-nativewind](https://expo.dev/@iryna/solito-nativewind)
+
+Open the following link on your iOS devices and follow the instructions to install the development profile:
+
+https://expo.dev/register-device/d485b975-6c0b-46cf-a0cb-57a7a1057de9
+
 
 ## Folder layout
 
