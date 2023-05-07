@@ -40,3 +40,8 @@ Recipes app allows user to pick a recipe and read ingredients and todo steps to 
   - After building the dev client, from the root of the monorepo...
     - `yarn native` (This runs `expo start --dev-client`)
 
+## Screenshots
+
+![Alt](https://user-images.githubusercontent.com/33914030/236697939-a3b57f96-0bab-4a3e-a818-60ccaa44fadb.png "Recipes")
+
+![Alt](https://user-images.githubusercontent.com/33914030/236697937-d5504c6f-6004-4a0a-af9e-74306ac71b9d.png "Recipe Details")
