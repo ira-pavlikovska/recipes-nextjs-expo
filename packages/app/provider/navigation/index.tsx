@@ -15,8 +15,8 @@ export function NavigationProvider({
           config: {
             initialRouteName: 'login',
             screens: {
-                login: '',
-                recipes: 'recipes',
+              login: '',
+              recipes: 'recipes',
               'recipe-detail': 'recipe/:id',
             },
           },

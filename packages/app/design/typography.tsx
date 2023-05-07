@@ -1,5 +1,13 @@
 import { ComponentProps, forwardRef } from 'react'
-import { Button as NativeButton, Text as NativeText, Platform, Linking, TextStyle, TextInput as NativeInput, Image as NativeImage} from 'react-native'
+import {
+  Button as NativeButton,
+  Text as NativeText,
+  Platform,
+  Linking,
+  TextStyle,
+  TextInput as NativeInput,
+  Image as NativeImage,
+} from 'react-native'
 import { styled, StyledProps } from 'nativewind'
 import { TextLink as SolitoTextLink } from 'solito/link'
 
@@ -8,8 +16,10 @@ export const Button = styled(NativeButton, '')
 
 export const Image = styled(NativeImage, '')
 
-
-export const TextInput = styled(NativeInput, 'w-full max-w-sm rounded-md p-1.5 text-gray-900 bg-gray-300 ring-1')
+export const TextInput = styled(
+  NativeInput,
+  'w-full max-w-sm rounded-md p-1.5 text-gray-900 bg-gray-300 ring-1'
+)
 
 export const Text = styled(NativeText)
 

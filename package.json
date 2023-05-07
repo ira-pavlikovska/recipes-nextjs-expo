@@ -19,7 +19,8 @@
     "native": "cd apps/expo && yarn start",
     "web": "cd apps/next && yarn next",
     "cy:run": "cypress run",
-    "cy:open": "cypress open"
+    "cy:open": "cypress open",
+    "prettier": "prettier --write ."
   },
   "engines": {
     "node": ">=16.0.0 <17.0.0"

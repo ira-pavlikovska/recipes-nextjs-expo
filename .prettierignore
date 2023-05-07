@@ -1,0 +1,9 @@
+build
+coverage
+.expo
+android
+dist
+ios
+.next
+node_modules
+.yarn
